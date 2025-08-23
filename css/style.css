@@ -1,0 +1,1193 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+
+Author: Andy Clarke
+Version: 0.9b
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+_____________________________________________________
+
+1.ROOT
+2.HEADINGS
+3.TYPOGRAPHY
+4.LINKS
+5.FIGURES & IMAGES
+6.TABLES
+7.FORMS (See css/mylibs/forms.css)
+8.BANNER header
+9.NAVIGATION nav[role="navigation"]
+10.CONTENT
+11.MAIN div[role="main"]
+12.COMPLIMENTARY div[role="complementary"]
+13.CONTENTINFO footer[role="contentinfo"]
+14.GLOBAL OBJECTS
+15.VENDOR-SPECIFIC 
+16.TEMPLATE SPECIFICS
+17.MODERNIZR
+
+COLOURS 
+
+*/
+
+@font-face {
+	font-family: 'open_sanslight';
+	src: url('../font/OpenSans-Light-webfont.eot');
+	src: url('../font/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../font/OpenSans-Light-webfont.woff') format('woff'),
+		url('../font/OpenSans-Light-webfont.ttf') format('truetype'),
+		url('../font/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*
+@font-face {
+	font-family: 'open_sansregular';
+	src: url('../font/OpenSans-Regular-webfont.eot');
+	src: url('../font/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../font/OpenSans-Regular-webfont.woff') format('woff'),
+		url('../font/OpenSans-Regular-webfont.ttf') format('truetype'),
+		url('../font/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin : 0;
+padding : 0;
+border : 0;
+font-size : 100%;
+font : inherit;
+vertical-align : baseline; }
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display : block; }
+
+abbr[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+/* 1.ROOT */
+
+html {
+background-color: #f2f2f2; }
+html, body {
+	height: 100%;
+}
+body { 
+margin : 0 auto;
+padding : 0;
+font : 100%/1.4 "open_sanslight","Helvetica Neue",Helvetica,Arial,sans-serif;
+color : #3b404a; 
+background-color : transparent; }
+
+.sitePreloader {
+	background: #293449;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+
+.sitePreloader img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -16px 0 0 -16px;
+}
+
+/* 2.HEADINGS */
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+font-family: "open_sanslight","Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight: normal;
+color: #293449; }
+h1 { 
+margin-bottom : .75em;
+font-size : 2.5em; /* 40 / 16 = 2.5 */
+line-height : 1.2; }
+
+h2 { 
+margin-bottom : .75em;
+font-size : 2em; /* 32 / 16 = 2 */
+line-height : 1.2; }
+
+h3 { 
+margin-bottom : 1em;
+font-size : 1.5em; /* 24 / 16 = 1.5 */
+line-height : 1.3; }
+
+h4, h5 { 
+margin-bottom : 1.25em;
+font-size : 1.25em; /* 20 / 16 = 1 */
+line-height : 1.25; }
+
+/* 3.TYPOGRAPHY */
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : 1.5em; 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+ul, 
+ol { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; }
+
+ul { 
+list-style-type : disc; }
+
+ol { 
+list-style-type : decimal; }
+
+li ul, 
+li ol { 
+margin : 0;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+dl, 
+dd { 
+margin-bottom : 1.5em; }
+
+dt { 
+font-weight : normal; }
+
+blockquote  { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; 
+border-left : 1px solid rgb(200,200,200);
+font-style : italic; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+b, 
+strong	{ 
+font-weight : bold; }
+
+i, 
+em { 
+font-style : italic; }
+
+sup, 
+sub { 
+position : relative;
+font-size : 75%; 
+line-height : 0; }
+
+sup { 
+top : -.5em; }
+
+sub { 
+bottom : -.25em; }
+
+address { 
+font-style : normal; }
+
+pre { 
+margin-bottom : 1.5em; 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+pre, 
+code { 
+font : .875em 'andale mono', 'lucida console', monospace; 
+line-height : 1.5; }
+
+small {
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+hr {
+background: transparent url(../img/background_separator.png) top center no-repeat;
+border: none;
+border-color: transparent;
+height: 10px;
+margin: 0 0 24px;
+clear:both; }
+
+/* 4.LINKS */
+
+a, 
+a:visited {
+outline : none;
+color : #ce616e;
+text-decoration : none;
+-webkit-transition: color .3s ease-in-out;
+-moz-transition: color .3s ease-in-out;
+-o-transition: color .3s ease-in-out;
+transition: color .3s ease-in-out; }
+ 
+a:hover { 
+outline: none;
+color: #000; 
+text-decoration : none; }
+ 
+a:active, 
+a:focus { 
+outline : none;
+color : rgb(51,51,51); }
+
+/* 5.FIGURES & IMAGES */
+
+figure {
+margin-bottom : 1.5em; }
+
+figure img,
+figure object,
+figure embed {
+margin-bottom : .75em;
+max-width : 100%; }
+
+figcaption {
+display : block;
+font-weight : normal; }
+
+/* 6.TABLES */
+
+table { 
+border-collapse : collapse;
+border-spacing : 0;
+margin-bottom : 1.4em; 
+width : 100%;
+font-size : .875em; /* 14 / 16 = .875 */ }
+
+th { 
+font-weight : bold; }
+
+th, td, caption { 
+padding : .25em 10px .25em 5px; }
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
+
+/* 7.FORMS (See css/mylibs/forms.css) */
+
+/* 8.BANNER */
+
+header {
+position: relative;
+/*
+min-height: 480px;
+*/
+background: #293449 url(../img/background.svg) top center repeat;
+color: #fff;
+padding: 1.5em 0 0;
+text-align: center;
+overflow: hidden;
+}
+
+.no-svg header {
+background: #293449 url(../img/background.png) top center repeat;
+}
+
+header a.logo {
+width: 240px;
+height: 56px;
+background: transparent url(../img/spacegoat-logo.svg) top center no-repeat;
+background-size: 240px 56px;
+margin: 0 auto 1.5em;
+}
+
+.no-svg header a.logo {
+background: transparent url(../img/spacegoat-logo.png) top center no-repeat;
+}
+
+header h1 {
+color: #fff;
+text-transform: uppercase;
+font-size: 1.125em;
+line-height: 1.5;
+margin-bottom: 1.5em;
+}
+
+header p.get-in-touch {
+margin-bottom: 2em;
+}
+
+header p.get-in-touch a,
+header p.get-in-touch a:link,
+header p.get-in-touch a:visited {
+background-color: #ce616e;
+color: #fff;
+text-transform: uppercase;
+border: 2px solid #ce616e;
+padding: 2px 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px;
+-webkit-transition: all .3s ease-in-out;
+-moz-transition: all .3s ease-in-out;
+-o-transition: all .3s ease-in-out;
+transition: all .3s ease-in-out;
+}
+
+header p.get-in-touch a:hover {
+background-color: #1d2633;
+background-color: rgba(0,0,0,0.1);
+color: #ce616e;
+}
+
+.js.csstransforms3d.cssanimations header a.logo,
+.js.csstransforms3d.cssanimations header h1,
+.js.csstransforms3d.cssanimations header p.get-in-touch {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 600ms;
+	animation-duration: 600ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+.js.csstransforms3d.cssanimations header  a.logo {
+	-webkit-animation-delay: 300ms;
+	animation-delay: 300ms;
+}
+
+.js.csstransforms3d.cssanimations header h1 {
+	-webkit-animation-delay: 450ms;
+	animation-delay: 450ms;
+}
+
+.js.csstransforms3d.cssanimations header p.get-in-touch {
+	-webkit-animation-delay: 600ms;
+	animation-delay: 600ms;
+}
+
+header .rocket {
+position: relative;
+width: 44px;
+height: 244px;
+background: transparent url(../img/rocket.svg) top center no-repeat;
+background-size: 44px 244px;
+margin: 0 auto 65px;
+z-index: 1;
+}
+
+.no-svg header .rocket {
+background: transparent url(../img/rocket.png) top center no-repeat;
+}
+
+.js.csstransforms3d.cssanimations header .rocket {
+	-webkit-animation-name: rocketLaunch;
+	animation-name: rocketLaunch;
+	-webkit-animation-duration: 4000ms;
+	animation-duration: 4000ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1200ms;
+	animation-delay: 1200ms;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+header .cloud-left,
+header .cloud-right {
+position: absolute;
+width: 236px;
+height: 87px;
+background-size: 236px 87px;
+bottom: 50px;
+left: 50%;
+z-index: 2;
+}
+
+header .cloud-left {
+background: transparent url(../img/cloud-left.svg) top center no-repeat;
+margin-left: -236px;
+}
+
+.no-svg header .cloud-left {
+background: transparent url(../img/cloud-left.png) top center no-repeat;
+}
+
+header .cloud-right {
+background: transparent url(../img/cloud-right.svg) top center no-repeat;
+margin-left: 0;
+}
+
+.no-svg header .cloud-right {
+background: transparent url(../img/cloud-right.png) top center no-repeat;
+}
+
+.js.csstransforms3d.cssanimations header .cloud-left {
+	-webkit-animation-name: cloudLeft;
+	animation-name: cloudLeft;
+}
+
+.js.csstransforms3d.cssanimations header .cloud-right {
+	-webkit-animation-name: cloudRight;
+	animation-name: cloudRight;
+}
+
+.js.csstransforms3d.cssanimations header .cloud-left,
+.js.csstransforms3d.cssanimations header .cloud-right {
+	-webkit-animation-duration: 2400ms;
+	animation-duration: 2400ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2800ms;
+	animation-delay: 2800ms;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+header .clouds-back {
+position: absolute;
+width: 793px;
+height: 164px;
+background: transparent url(../img/clouds-back.svg) top center no-repeat;
+background-size: 793px 164px;
+bottom: 45px;
+left: 50%;
+margin-left: -396px;
+}
+
+.no-svg header .clouds-back {
+background: transparent url(../img/clouds-back.png) top center no-repeat;
+}
+
+.js.csstransforms3d.cssanimations header .clouds-back {
+	-webkit-animation-name: cloudsBack;
+	animation-name: cloudsBack;
+	-webkit-animation-duration: 1600ms;
+	animation-duration: 1600ms;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 4000ms;
+	animation-delay: 4000ms;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+.js.csstransforms3d.cssanimations header a.logo.animated,
+.js.csstransforms3d.cssanimations header h1.animated,
+.js.csstransforms3d.cssanimations header p.get-in-touch.animated,
+.js.csstransforms3d.cssanimations header .rocket,
+.js.csstransforms3d.cssanimations header .cloud-left,
+.js.csstransforms3d.cssanimations header .cloud-right,
+.js.csstransforms3d.cssanimations header .clouds-back {
+	-webkit-animation-play-state: running;
+	animation-play-state: running;
+}
+
+/* 9.NAVIGATION */
+
+/* 10.CONTENT */
+div.content {
+position: relative;
+margin-top: -75px;
+z-index: 10;
+background: transparent url(../img/moon-surface.svg) top center no-repeat;
+}
+.no-svg div.content {
+background: transparent url(../img/moon-surface.png) top center no-repeat;
+}
+/* 11.MAIN */
+div[role="main"] {
+padding: 64px 20px 24px;
+max-width: 1280px;
+margin: 0 auto;
+}
+
+section.awards {
+background: transparent url(../img/award.svg) top center no-repeat;
+background-size: 26px 36px;
+padding-top: 3em;
+text-align: center;
+}
+
+.no-svg section.awards {
+background: transparent url(../img/award.png) top center no-repeat;
+}
+
+/* 12.COMPLIMENTARY */
+
+/* 13.CONTENTINFO */
+
+footer[role="contentinfo"] {
+text-align: center;
+}
+
+footer[role="contentinfo"] ul {
+margin: 0 auto 24px;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+
+footer[role="contentinfo"] ul li {
+display: inline-block;
+width: 32px;
+height: 32px;
+margin: 0 0.5em;
+}
+
+footer[role="contentinfo"] ul li a {
+width: 32px;
+height: 32px;
+display: block;
+}
+
+footer[role="contentinfo"] ul li a.facebook {
+background: transparent url(../img/icon-facebook.svg) top center no-repeat;
+background-size: 32px 32px;
+}
+
+.no-svg footer[role="contentinfo"] ul li a.facebook {
+background: transparent url(../img/icon-facebook.png) top center no-repeat;
+}
+
+footer[role="contentinfo"] ul li a.linkedin {
+background: transparent url(../img/icon-linkedin.svg) top center no-repeat;
+background-size: 32px 32px;
+}
+
+.no-svg footer[role="contentinfo"] ul li a.linkedin {
+background: transparent url(../img/icon-linkedin.png) top center no-repeat;
+}
+
+footer[role="contentinfo"] p {
+font-size: 0.75em;
+color: #666f80;
+margin: 0;
+padding-bottom: 1.5em;
+}
+
+/* 14.GLOBAL OBJECTS */
+
+.clearfix { 
+zoom : 1; }
+
+.clearfix:before, 
+.clearfix:after { 
+content : "\0020"; 
+display : block; 
+height : 0; 
+overflow : hidden; }
+
+.clearfix:after { 
+clear : both; }
+
+/* 15.VENDOR-SPECIFIC */
+
+body {
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+/*
+a:link { 
+-webkit-tap-highlight-color : rgb(195,133,100); }
+*/
+::-webkit-selection { 
+background : #ce616e; 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : #ce616e; 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::selection { 
+background : #ce616e; 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+/*
+input[type=search] {
+-webkit-appearance : none; }
+
+input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-cancel-button {
+display : none; }
+*/
+
+::-webkit-input-placeholder {
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+input:-moz-placeholder { 
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+div,
+input,
+textarea  { 
+-webkit-box-sizing : border-box;
+-moz-box-sizing : border-box;
+-o-box-sizing : border-box;
+box-sizing : border-box; }
+
+/* Non-semantic helper classes */
+
+/* Image replacement */
+.ir { 
+display : block; 
+text-indent : -999em; 
+overflow : hidden; 
+background-repeat : no-repeat; 
+text-align : left; 
+direction : ltr; }
+
+/* Hide for screenreaders and visual browsers */
+.hidden { 
+display : none; 
+visibility : hidden; }
+
+/* Hide visually */
+.visuallyhidden { 
+position : absolute;
+clip : rect(0 0 0 0); 
+overflow : hidden;
+margin: -1px;
+padding : 0;
+height : 1px;      
+width : 1px;
+border : 0; }
+
+/* Allow an element to be focusable via keyboard  */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { 
+position : static;
+clip : auto; 
+overflow : visible;
+height : auto; 
+margin : 0;   
+width : auto; }
+
+/* Hide but maintain layout */
+.invisible { 
+visibility : hidden; }
+
+/* 16.TEMPLATE SPECIFICS */
+
+#goog-fixurl ul  {
+list-style-type : none; }
+
+#goog-fixurl input  {
+margin-bottom : 1.5em; }
+
+/* 17.MODERNIZR */
+
+/* 18. ANIMATIONS */
+@-webkit-keyframes fadeInUp {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 24px, 0);
+		transform: translate3d(0, 24px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 24px, 0);
+		-ms-transform: translate3d(0, 24px, 0);
+		transform: translate3d(0, 24px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@-webkit-keyframes rocketLaunch {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 244px, 0);
+		transform: translate3d(0, 244px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	1% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 244px, 0);
+		transform: translate3d(0, 244px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	30% {
+		-webkit-transform: translate3d(0, 143px, 0);
+		transform: translate3d(0, 143px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	43%, 49%, 55%, 61%, 67% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, .4deg);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, .4deg);
+	}
+
+	46%, 52%, 58%, 64% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, -.4deg);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, -.4deg);
+	}
+
+	70% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, 0);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, 0);
+	}
+
+	100% {
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+}
+
+@keyframes rocketLaunch {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 244px, 0);
+		-ms-transform: translate3d(0, 244px, 0);
+		transform: translate3d(0, 244px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	1% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 244px, 0);
+		-ms-transform: translate3d(0, 244px, 0);
+		transform: translate3d(0, 244px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	30% {
+		-webkit-transform: translate3d(0, 143px, 0);
+		-ms-transform: translate3d(0, 143px, 0);
+		transform: translate3d(0, 143px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	43%, 49%, 55%, 61%, 67% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, .4deg);
+		-ms-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, .4deg);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, .4deg);
+	}
+
+	46%, 52%, 58%, 64% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, -.4deg);
+		-ms-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, -.4deg);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, -.4deg);
+	}
+
+	70% {
+		-webkit-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, 0);
+		-ms-transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, 0);
+		transform: translate3d(0, 143px, 0) rotate3d(0, 0, 1, 0);
+	}
+
+	100% {
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+}
+
+@-webkit-keyframes cloudsBack {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 165px, 0);
+		transform: translate3d(0, 165px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes cloudsBack {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 165px, 0);
+		-ms-transform: translate3d(0, 165px, 0);
+		transform: translate3d(0, 165px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@-webkit-keyframes cloudLeft {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(75px, 90px, 0);
+		transform: translate3d(75px, 90px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+  1% {
+		opacity: 1;
+		-webkit-transform: translate3d(75px, 90px, 0);
+		transform: translate3d(75px, 90px, 0);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+  50% {
+		-webkit-transform: translate3d(75px, 55px, 0);
+		transform: translate3d(75px, 55px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+  100% {
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes cloudLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(75px, 90px, 0);
+		-ms-transform: translate3d(75px, 90px, 0);
+		transform: translate3d(75px, 90px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	1% {
+		opacity: 1;
+		-webkit-transform: translate3d(75px, 90px, 0);
+		-ms-transform: translate3d(75px, 90px, 0);
+		transform: translate3d(75px, 90px, 0);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	50% {
+		-webkit-transform: translate3d(75px, 55px, 0);
+		-ms-transform: translate3d(75px, 55px, 0);
+		transform: translate3d(75px, 55px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@-webkit-keyframes cloudRight {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-75px, 90px, 0);
+		transform: translate3d(-75px, 90px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+  1% {
+		opacity: 1;
+		-webkit-transform: translate3d(-75px, 90px, 0);
+		transform: translate3d(-75px, 90px, 0);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+  50% {
+		-webkit-transform: translate3d(-75px, 55px, 0);
+		transform: translate3d(-75px, 55px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+  100% {
+		-webkit-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes cloudRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-75px, 90px, 0);
+		-ms-transform: translate3d(-75px, 90px, 0);
+		transform: translate3d(-75px, 90px, 0);
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+
+	1% {
+		opacity: 1;
+		-webkit-transform: translate3d(-75px, 90px, 0);
+		-ms-transform: translate3d(-75px, 90px, 0);
+		transform: translate3d(-75px, 90px, 0);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	50% {
+		-webkit-transform: translate3d(-75px, 55px, 0);
+		-ms-transform: translate3d(-75px, 55px, 0);
+		transform: translate3d(-75px, 55px, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	100% {
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+}
+
+/* MEDIA QUERIES */
+
+/*Print __________________________________________________________________________________________________________ */
+@media print {
+* { 
+background : transparent !important; 
+color : black !important; 
+text-shadow : none !important; 
+filter : none !important;
+-ms-filter : none !important; } 
+
+a, a:visited { 
+color : #444 !important; 
+text-decoration : underline; }
+
+a[href]:after { 
+content : " (" attr(href) ")"; }
+
+abbr[title]:after { 
+content : " (" attr(title) ")"; }
+
+a[href^="javascript:"]:after, 
+a[href^="#"]:after { 
+content : ""; }
+  
+pre, blockquote { 
+border : 1px solid #999; 
+page-break-inside : avoid; }
+
+thead { 
+display : table-header-group; }
+
+tr, img { 
+page-break-inside : avoid; }
+
+@page { 
+margin : .5cm; }
+
+p, h2, h3 { 
+orphans : 3; 
+widows : 3; }
+
+h2, h3 { 
+page-break-after : avoid; }
+}/*/mediaquery*/
+
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*600px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 600px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+header {
+padding-top: 3em;
+}
+
+header a.logo {
+width: 480px;
+height: 112px;
+background-size: 480px 112px;
+}
+
+.no-svg header a.logo {
+background: transparent url(../img/spacegoat-logo-large.png) top center no-repeat;
+}
+
+header h1 {
+font-size: 2em;
+margin-bottom: 1em;
+}
+
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+section.awards {
+background: transparent url(../img/award.svg) top center no-repeat;
+background-size: 52px 72px;
+padding-top: 6em;
+text-align: center;
+}
+
+.no-svg section.awards {
+background: transparent url(../img/award-large.png) top center no-repeat;
+}
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS (See css/mylibs/forms.css) */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+

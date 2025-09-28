@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b7bf10;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>icon-tick</title>
+  <g id="Group_44" data-name="Group 44">
+    <g id="Group_43" data-name="Group 43">
+      <g id="Layer0_0_FILL" data-name="Layer0 0 FILL">
+        <path id="Path_57" data-name="Path 57" class="cls-1" d="M13.34,13.34a41.82,41.82,0,0,0-.18,59.14l.18.18A39.89,39.89,0,0,0,43,85q17.05,0,29.66-12.33A40.45,40.45,0,0,0,85,43q0-17.05-12.34-29.66Q60.06,1,43,1A39.89,39.89,0,0,0,13.34,13.34M22,43l5.25-5.25,10.5,10.5,21-21L64,32.5,37.75,58.75Z"/>
+        <path id="Path_58" data-name="Path 58" class="cls-2" d="M27.17,37.72,21.89,43,37.72,58.82,64.1,32.45l-5.27-5.28L37.72,48.28Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

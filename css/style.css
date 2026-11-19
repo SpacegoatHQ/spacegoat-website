@@ -471,6 +471,21 @@
 	.service {
 		margin-bottom: 1rem;
 		padding-top: 1rem;
+
+		&.front-end-ux-ui {
+
+			&:before {
+				content: "";
+				display: block;
+				height: 12px;
+				width: 52px;
+				margin: 1rem auto 3rem 0;
+				background-image: url(../img/icon-3-plus.svg);
+				background-color: transparent;
+				background-repeat: no-repeat;
+				opacity: 0.5;
+			}
+		}
 	}
 
 	.lifecycle {

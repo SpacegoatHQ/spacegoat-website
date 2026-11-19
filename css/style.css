@@ -331,7 +331,7 @@
 		}
 
 		&:focus-visible {
-			outline-offset: -3px;
+			outline-offset: 3px;
 		}
 	}
 
@@ -360,7 +360,7 @@
 		}
 
 		&:focus-visible {
-			outline-offset: -3px;
+			outline-offset: 3px;
 		}
 	}
 
@@ -377,6 +377,10 @@
 
 		&:focus {
 			top: 0;
+		}
+
+		&:focus-visible {
+			outline-offset: -3px;
 		}
 	}
 

@@ -135,6 +135,12 @@
 
 	html {
 		background-color: var(--color-bg-main);
+		scroll-behavior: smooth;
+
+		/* Disable smooth scrolling for users who prefer reduced motion */
+		@media (prefers-reduced-motion: reduce) {
+			scroll-behavior: auto;
+		}
 	}
 
 	body {
@@ -364,6 +370,10 @@
 		left: 0;
 		font-size: 0.75rem;
 		font-weight: 800;
+		padding: 0.25rem 0.5rem;
+		color: var(--color-bg-main);
+		background-color: var(--color-steel-blue);
+		border: 2px solid var(--color-steel-blue);
 
 		&:focus {
 			top: 0;

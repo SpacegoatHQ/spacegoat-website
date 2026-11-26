@@ -570,6 +570,100 @@
 		margin-bottom: 3rem;
 	}
 
+	.clients {
+
+		.grid {
+			display: grid;
+			/*gap: 2rem;*/
+			grid-template-columns: repeat(3, 1fr);
+			list-style-type: none;
+			padding: 0;
+			--cross-size: 1rem;
+			--cross-thickness: 1px;
+			--cross-color: color-mix(in srgb, var(--color-steel-blue) 25%, transparent);
+
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+
+			@media (min-width: 1200px) {
+				grid-template-columns: repeat(6, 1fr);
+			}
+		}
+
+		.grid-item {
+
+			position: relative;
+			background-color: color-mix(in srgb, var(--color-steel-blue) 0%, transparent);
+			transition: all .3s ease-in-out;
+
+			img {
+				opacity: 0.6;
+				transition: all .5s ease-in-out;
+			}
+
+			&:hover {
+				background-color: color-mix(in srgb, var(--color-steel-blue) 4%, transparent);
+
+				img {
+					opacity: 0.8;
+					transform: scale(1.04);
+				}
+			}
+
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				background-color: var(--cross-color);
+				pointer-events: none;
+				z-index: 1;
+			}
+
+			&:before {
+				width: var(--cross-size);
+				height: var(--cross-thickness);
+				bottom: calc(var(--cross-thickness) / -2);
+				right: calc(var(--cross-size) / -2);
+			}
+
+			&:after {
+				width: var(--cross-thickness);
+				height: var(--cross-size);
+				right: calc(var(--cross-thickness) / -2);
+				bottom: calc(var(--cross-size) / -2);
+			}
+		}
+
+		@media (max-width: 767px) {
+
+			.grid-item:nth-child(3n)::before,
+			.grid-item:nth-child(3n)::after,
+			.grid-item:nth-last-child(-n + 3)::before,
+			.grid-item:nth-last-child(-n + 3)::after {
+				display: none;
+			}
+	}
+
+		@media (min-width: 768px) and (max-width: 1199px) {
+			.grid-item:nth-child(4n)::before,
+			.grid-item:nth-child(4n)::after,
+			.grid-item:nth-last-child(-n + 4)::before,
+			.grid-item:nth-last-child(-n + 4)::after {
+				display: none;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.grid-item:nth-child(6n)::before,
+			.grid-item:nth-child(6n)::after,
+			.grid-item:nth-last-child(-n + 6)::before,
+			.grid-item:nth-last-child(-n + 6)::after {
+				display: none;
+			}
+		}
+	}
+
 	.testimonials {
 
 		.grid {

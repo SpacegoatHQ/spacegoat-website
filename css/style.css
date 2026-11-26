@@ -503,7 +503,7 @@
 
 		.grid-item {
 			position: relative;
-			font-weight: 700;
+			font-weight: 900;
 			color: var(--color-midnight-blue);
 			padding: 1rem;
 			border: 2px solid var(--color-primary);
